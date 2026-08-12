@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Office Forms — UJ Global Rankings &amp; Accreditation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:       #0C5A63;
+    --teal-deep:  #073C42;
+    --teal-mid:   #11727d;
+    --amber:      #DE8A1B;
+    --ink:        #0F1A1B;
+    --muted:      #5A6A6B;
+    --line:       #E4EAEA;
+    --tint:       #F4F8F7;
+    --white:      #FCFDFD;
+    --sans:       'Outfit', system-ui, -apple-system, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background-color: var(--teal-deep);
+    background-image: url('assets/forms/office forms.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(7,60,66,.97) 0%, rgba(7,60,66,.82) 55%, rgba(7,60,66,.60) 100%);
+    z-index: 0;
+  }
+  .hero-inner {
+    max-width: 1180px; margin: 0 auto; width: 100%;
+    position: relative; z-index: 1;
+    padding: 64px 0;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--amber);
+    margin-bottom: 20px;
+  }
+  .hero-eyebrow::before { display: none; }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 56px); font-weight: 700;
+    color: #fff; line-height: 1.08; letter-spacing: -.02em;
+    margin: 0 0 18px;
+  }
+  .hero h1 em { font-style: normal; color: #fff; }
+  .hero p {
+    font-size: 18px; color: #a8c8cc; line-height: 1.75;
+    max-width: 580px; margin: 0;
+  }
+
+  /* ── Main content ── */
+  .main { max-width: 1180px; margin: 0 auto; padding: 64px 48px 96px; }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 13px; font-weight: 700; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--amber);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--line);
+  }
+
+  /* ── Cards grid ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius:0;
+    padding: 28px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card:hover {
+    box-shadow: 0 12px 36px -12px rgba(7,60,66,.18);
+    transform: translateY(-3px);
+    border-color: #c4d9db;
+  }
+
+  /* word doc icon */
+  .card-icon {
+    width: 44px; height: 44px; border-radius:0;
+    background: #e8f2f3;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .card-icon svg { width: 22px; height: 22px; }
+
+  .card-top { display: flex; align-items: flex-start; gap: 14px; }
+  .card-meta { flex: 1; }
+
+
+  .card-name {
+    font-size: 16px; font-weight: 600; color: var(--ink);
+    line-height: 1.45;
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .card-dl {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 14px; font-weight: 600; color: var(--teal);
+    text-decoration: none;
+  }
+  .card-dl svg { width: 15px; height: 15px; }
+  .card-dl:hover { color: var(--teal-mid); }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--teal-deep);
+    color: #7ca8ad;
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 14px;
+  }
+  footer a { color: #8ecdd3; text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 24px 40px; }
+    .main { padding: 40px 24px 64px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<script src="nav.js"></script>
+<uj-navbar active="Office Forms" home="index.html"></uj-navbar>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Resources</div>
+    <h1>Office <em>Forms</em></h1>
+    <p>All official forms used by the Rankings &amp; International Accreditation Office. Click any card to download the file directly.</p>
+  </div>
+</section>
+
+<!-- FORMS GRID -->
+<main class="main">
+  <div class="section-label">Downloadable Documents</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <!-- Word doc icon -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name">Implementation Follow-up Form For International Accreditation Requirements</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/Implementation Follow-up Form For International Accreditation Requirements.doc" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name">A Form Comparison Table Between International Accreditation Bodies</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/A Form Comparison Table Between International Accreditation Bodies.doc" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name">A Form For Following up the Contributions of Honorary &amp; Adjunct Professors and Experts</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/A Form For Following up the Contributions of Honorary& adjunct professors and experts.docx" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name">Activities To Be Accomplished By Honorary Professors, Adjunct Professors, And Experts</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/Activities To Be Accomplished By Honorary Professors, adjunct Professors, And Experts.docx" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name">An Internationally Accredited Program Documentation Form</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/An Internationally Accredited Program Documentation Form.doc" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name">Nomination Form for Honorary/Adjunct/Expert Professor</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/Nomination Form for HonoraryAdjunct%2FExpert Professor (2).docx" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name">International Accreditation Maintenance Form</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/International Accreditation Maintenance Form.doc" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="#0C5A63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 13l1.5 4 1.5-4 1.5 4 1.5-4" stroke="#0C5A63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-meta">
+          <div class="card-name" dir="rtl">متابعة سير تنفيذ متطلبات اعتماد دولي</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-dl" href="assets/forms/متابعة سير تنفيذ متطلبات اعتماد دولي.doc" download>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+</main>
+
+<footer>
+  © 2026 The University of Jordan — Global Rankings &amp; International Accreditation Office.
+  <br><a href="index.html">Back to Home</a>
+</footer>
+
+</body>
+</html>

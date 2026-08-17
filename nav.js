@@ -28,9 +28,9 @@
       },
       { label: 'Accreditation',       href: home + '#accreditation' },
       { label: 'Rankings',            href: 'rankings.html' },
-      { label: 'Researchers',         href: home + '#researchers' },
-      { label: 'Sustainability Office',href: home + '#sustainability' },
-      { label: 'Contact Us',          href: home + '#contact' },
+      { label: 'Researchers',         href: 'https://offices.ju.edu.jo/en/gco/researchersranking.aspx', external: true },
+      { label: 'Sustainability Office',href: 'https://ujsustainability.org/sustainability-home.html',   external: true },
+      { label: 'Contact Us',          href: 'contact.html' },
     ];
   }
 
@@ -139,7 +139,8 @@
                 const sub = l.menu.map(m => `<a href="${m.href}">${m.label}</a>`).join('');
                 return `<div class="item"><a href="${l.href}" class="${cls}">${l.label}${caret}<span class="ul"></span></a><div class="dropdown">${sub}</div></div>`;
               }
-              return `<div class="item"><a href="${l.href}" class="${cls}">${l.label}<span class="ul"></span></a></div>`;
+              const ext = l.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+              return `<div class="item"><a href="${l.href}"${ext} class="${cls}">${l.label}<span class="ul"></span></a></div>`;
             }).join('')}
           </div>
         </nav>`;

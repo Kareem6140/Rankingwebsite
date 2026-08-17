@@ -445,8 +445,8 @@
   /* ================================================================
      UNDER INTERNATIONAL ACCREDITATION — schools from the provided list.
      "Educational Sciences" and "School of Educational Sciences" kept as
-     two separate entries per request. "School of Arts and Design" reuses
-     the "School of Arts" image.
+     two separate entries per request. "School of Arts" and "School of Arts
+     and Design" each use their own distinct image.
   ================================================================ */
   const underList = [
     { name:"Prince Al Hussein Bin Abdullah II School of Political Science and International Studies", image:"assets/accreditation/expand  Prince Al Hussein Bin Abdullah II School of Political Science and International Studies.jpg", cert:"#", year:"", body:"",
@@ -461,7 +461,7 @@
       desc:"" },
     { name:"School of Arts", image:"assets/accreditation/School of Arts.jpg", cert:"#", year:"", body:"",
       desc:"" },
-    { name:"School of Arts and Design", image:"assets/accreditation/School of Arts.jpg", cert:"#", year:"", body:"",
+    { name:"School of Arts and Design", image:"assets/accreditation/School of Arts and Design.jpg", cert:"#", year:"", body:"",
       desc:"" },
     { name:"School of Educational Sciences", image:"assets/accreditation/School_of_Educational_Sciences,_University_of_Jordan.jpg", cert:"#", year:"", body:"",
       desc:"" },
@@ -587,8 +587,7 @@
       : `href="#" onclick="return false;"`;
     const certBtn = isUnder ? `` : `
       <a class="p-download" ${cert}>
-        <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>
-        Certificate
+        View Certificate
       </a>`;
     const statusPill = isUnder
       ? `<div class="pd-status">In progress — under international accreditation</div>` : ``;
@@ -622,8 +621,7 @@
           ${c.body ? `<div><div class="k">Accrediting Body</div><div class="v">${esc(c.body)}</div></div>` : ``}
         </div>` : ``}
         <a class="p-download" ${cert}>
-          <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>
-          Certificate
+          View Certificate
         </a>`;
     } else {
       pInner.innerHTML = `

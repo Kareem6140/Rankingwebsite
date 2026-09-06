@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organizational Structure &amp; Board — UJ Global Rankings &amp; Accreditation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:       #0C5A63;
+    --teal-deep:  #073C42;
+    --teal-mid:   #11727d;
+    --amber:      #DE8A1B;
+    --ink:        #0F1A1B;
+    --muted:      #5A6A6B;
+    --line:       #E4EAEA;
+    --tint:       #F4F8F7;
+    --white:      #FCFDFD;
+    --sans:       'Outfit', system-ui, -apple-system, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background-color: var(--teal-deep);
+    background-image: url('assets/Home/vision_mission_image.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(7,60,66,.97) 0%, rgba(7,60,66,.82) 55%, rgba(7,60,66,.60) 100%);
+    z-index: 0;
+  }
+  .hero-inner {
+    max-width: 1180px; margin: 0 auto; width: 100%;
+    position: relative; z-index: 1;
+    padding: 64px 48px;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--amber);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 56px); font-weight: 700;
+    color: #fff; line-height: 1.08; letter-spacing: -.02em;
+    margin: 0 0 18px;
+  }
+  .hero h1 em { font-style: normal; color: #fff; }
+  .hero p {
+    font-size: 18px; color: #a8c8cc; line-height: 1.75;
+    max-width: 580px; margin: 0;
+  }
+
+  /* ── Main ── */
+  .main { flex: 1; max-width: 1180px; margin: 0 auto; padding: 64px 48px 96px; width: 100%; }
+
+  .section-label {
+    font-size: 13px; font-weight: 700; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--amber);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+  /* ── Grid ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; } }
+
+  /* ── Portrait card ── */
+  .card {
+    position: relative;
+    background: var(--white);
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(7,60,66,.05), 0 10px 30px -18px rgba(7,60,66,.35);
+    transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(7,60,66,.10), 0 26px 50px -20px rgba(7,60,66,.45);
+  }
+
+  .photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: linear-gradient(160deg,#e6eeee,#d5e0e0);
+  }
+  .photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 18%;
+    display: block;
+    transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .card:hover .photo-wrap img { transform: scale(1.04); }
+  /* subtle teal wash from the bottom so text area meets image cleanly */
+  .photo-wrap::after {
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: 0; height: 38%;
+    background: linear-gradient(to top, rgba(7,60,66,.30), transparent);
+  }
+
+  .body {
+    padding: 22px 24px 26px;
+    display: flex; flex-direction: column;
+    flex: 1;
+  }
+  .name {
+    font-size: 18.5px; font-weight: 700; color: var(--teal);
+    line-height: 1.25; letter-spacing: -.005em;
+    margin: 0;
+  }
+  /* amber accent under the name */
+  .name::after {
+    content: ''; display: block;
+    width: 30px; height: 3px; background: var(--amber);
+    margin-top: 12px; margin-bottom: 14px;
+  }
+  .role {
+    font-size: 14.5px; font-weight: 500; color: var(--muted);
+    line-height: 1.55; margin: 0;
+  }
+  .meta {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .email { font-size: 14px; font-weight: 500; word-break: break-word; }
+  .email a { color: var(--teal); text-decoration: none; }
+  .email a:hover { color: var(--teal-mid); text-decoration: underline; }
+  .date {
+    font-size: 13px; font-weight: 600; letter-spacing: .04em;
+    color: #8aa09f; text-transform: uppercase;
+  }
+
+  /* ── Org chart ── */
+  .orgchart { margin-top: 88px; }
+
+  .org-tree {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 0;
+  }
+  /* SVG connector layer sits behind the boxes */
+  .org-lines {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 0; pointer-events: none;
+  }
+  .org-lines line { stroke: #c4d9db; stroke-width: 2; }
+
+  .org-row { position: relative; z-index: 1; display: flex; justify-content: center; width: 100%; }
+  .org-row.manager   { margin-bottom: 40px; }
+  .org-row.staff     { margin-bottom: 40px; gap: clamp(120px, 34vw, 380px); }
+  .org-row.divisions { gap: clamp(80px, 46vw, 560px); }
+
+  /* generic node box */
+  .node {
+    background: var(--white);
+    border: 1px solid #d2e0e1;
+    border-top: 3px solid var(--amber);
+    padding: 18px 22px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.4;
+    min-width: 150px;
+    box-shadow: 0 1px 2px rgba(7,60,66,.05), 0 10px 26px -18px rgba(7,60,66,.35);
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .node:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(7,60,66,.10), 0 22px 44px -20px rgba(7,60,66,.45);
+  }
+  .node.head {
+    background: var(--teal);
+    color: #fff;
+    border: 1px solid var(--teal);
+    border-top: 3px solid var(--amber);
+    font-size: 16.5px;
+    padding: 22px 30px;
+    min-width: 210px;
+  }
+  .node .node-sub {
+    display: block;
+    font-size: 11.5px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--amber);
+    margin-bottom: 6px;
+  }
+  .node.head .node-sub { color: #f0c079; }
+
+  @media (max-width: 720px) {
+    .org-lines { display: none; }
+    .org-row.staff, .org-row.divisions { flex-direction: column; align-items: center; gap: 22px; }
+    .org-row.manager, .org-row.staff { margin-bottom: 22px; }
+    .org-tree::before {  /* simple vertical spine on mobile */
+      content: ''; position: absolute; top: 0; bottom: 0; left: 50%;
+      width: 2px; background: #c4d9db; transform: translateX(-50%); z-index: 0;
+    }
+    .node { position: relative; z-index: 1; }
+  }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--teal-deep);
+    color: #7ca8ad;
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 14px;
+  }
+  footer a { color: #8ecdd3; text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .hero-inner { padding: 48px 24px 40px; }
+    .main { padding: 40px 24px 64px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .photo-wrap img { transition: none; }
+    .card:hover { transform: none; }
+    .card:hover .photo-wrap img { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV (shared component — see nav.js) -->
+<script src="nav.js"></script>
+<uj-navbar active="About Us" home="index.html"></uj-navbar>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">About Us</div>
+    <h1>Administrative <em>Board</em></h1>
+    <p>The team behind the University of Jordan's Global Rankings &amp; International Accreditation Office.</p>
+  </div>
+</section>
+
+<!-- BOARD GRID -->
+<main class="main">
+  <div class="section-label">Administrative Board</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/drnjood.jpeg" alt="Dr. Njood Aldebei"></div>
+      <div class="body">
+        <h3 class="name">Dr. Njood Aldebei</h3>
+        <p class="role">Director of Global Rankings and International Accreditation Office</p>
+        <div class="meta"><span class="email"><a href="mailto:n.aldebei@ju.edu.jo">n.aldebei@ju.edu.jo</a></span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/shahed.jpeg" alt="Shahed Ayoub"></div>
+      <div class="body">
+        <h3 class="name">Shahed Ayoub</h3>
+        <p class="role">Work-Study Student</p>
+        <div class="meta"><span class="date">11/2024</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/sumaia.jpeg" alt="Sumaia Al_Qaisi"></div>
+      <div class="body">
+        <h3 class="name">Sumaia Al_Qaisi</h3>
+        <div class="meta"><span class="email"><a href="mailto:s_alqaisi@ju.edu.jo">s_alqaisi@ju.edu.jo</a></span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/sara.jpeg" alt="Sara Wajdi"></div>
+      <div class="body">
+        <h3 class="name">Sara Wajdi</h3>
+        <div class="meta"><span class="date">11/2023</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/mera.jpeg" alt="Mera Arabiat"></div>
+      <div class="body">
+        <h3 class="name">Mera Arabiat</h3>
+        <p class="role">Work-Study Programe</p>
+        <div class="meta"><span class="date">11/2023</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/aseel.jpeg" alt="Aseel Salameh"></div>
+      <div class="body">
+        <h3 class="name">Aseel Salameh</h3>
+        <p class="role">Work study program</p>
+        <div class="meta"><span class="date">2/2024</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/rafeef.jpeg" alt="Rafeef Atiyat"></div>
+      <div class="body">
+        <h3 class="name">Rafeef Atiyat</h3>
+        <p class="role">Training Student</p>
+        <div class="meta"><span class="date">2/2025</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo-wrap"><img src="assets/structure/razan.jpeg" alt="Razan Saba"></div>
+      <div class="body">
+        <h3 class="name">Razan Saba</h3>
+        <p class="role">Work study program</p>
+        <div class="meta"><span class="date">7/2025</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ORG CHART -->
+  <section class="orgchart">
+    <div class="section-label">Office Structure</div>
+    <div class="org-caption" style="margin:-14px 0 34px; color:var(--muted); font-size:15px; line-height:1.7; max-width:640px;">
+      The organizational structure of the Office of Global Rankings and International Accreditation.
+    </div>
+
+    <div class="org-tree" id="orgTree">
+      <svg class="org-lines" id="orgLines" preserveAspectRatio="none" aria-hidden="true"></svg>
+
+      <div class="org-row manager">
+        <div class="node head" data-org="manager">
+          <span class="node-sub">Head of Office</span>
+          Office Manager
+        </div>
+      </div>
+
+      <div class="org-row staff">
+        <div class="node" data-org="assistant">Manager Assistant</div>
+        <div class="node" data-org="office">Office</div>
+      </div>
+
+      <div class="org-row divisions">
+        <div class="node" data-org="div1">International Accreditation Division</div>
+        <div class="node" data-org="div2">Global Rankings Division</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Draw org-chart connector lines that always align to the box centers.
+  (function () {
+    function draw() {
+      var tree = document.getElementById('orgTree');
+      var svg  = document.getElementById('orgLines');
+      if (!tree || !svg) return;
+      if (window.matchMedia('(max-width:720px)').matches) { svg.innerHTML = ''; return; }
+
+      var box = tree.getBoundingClientRect();
+      function c(el) {
+        var r = el.getBoundingClientRect();
+        return {
+          x: r.left - box.left + r.width / 2,
+          top: r.top - box.top,
+          bottom: r.bottom - box.top,
+          left: r.left - box.left,
+          right: r.right - box.left
+        };
+      }
+      var mgr = c(tree.querySelector('[data-org=manager]'));
+      var ast = c(tree.querySelector('[data-org=assistant]'));
+      var off = c(tree.querySelector('[data-org=office]'));
+      var d1  = c(tree.querySelector('[data-org=div1]'));
+      var d2  = c(tree.querySelector('[data-org=div2]'));
+
+      svg.setAttribute('viewBox', '0 0 ' + box.width + ' ' + box.height);
+      svg.setAttribute('width', box.width);
+      svg.setAttribute('height', box.height);
+
+      // vertical spine centered under the manager
+      var spineX = mgr.x;
+      var staffMidY = (ast.top + ast.bottom) / 2;       // height of staff boxes
+      var divTopY = d1.top;
+
+      var lines = [];
+      function L(x1, y1, x2, y2) {
+        lines.push('<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"/>');
+      }
+
+      // 1) manager down to the staff-row midline
+      L(spineX, mgr.bottom, spineX, staffMidY);
+      // 2) horizontal from assistant -> office through the spine
+      L(ast.right, staffMidY, off.left, staffMidY);
+      // 3) continue spine down to the divisions' horizontal bar
+      var barY = (staffMidY + divTopY) / 2;
+      L(spineX, staffMidY, spineX, barY);
+      // 4) horizontal bar across the two divisions
+      L(d1.x, barY, d2.x, barY);
+      // 5) drop from bar down into each division box
+      L(d1.x, barY, d1.x, d1.top);
+      L(d2.x, barY, d2.x, d2.top);
+
+      svg.innerHTML = lines.join('');
+    }
+    window.addEventListener('load', draw);
+    window.addEventListener('resize', draw);
+    // redraw once fonts settle
+    setTimeout(draw, 300);
+  })();
+</script>
+
+<footer>
+  © 2026 The University of Jordan — Global Rankings &amp; International Accreditation Office.
+  <br><a href="index.html">Back to Home</a>
+</footer>
+
+</body>
+</html>
